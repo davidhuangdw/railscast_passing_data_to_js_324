@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    gon.products = Product.limit(10)
 
     respond_to do |format|
       format.html # index.html.erb
